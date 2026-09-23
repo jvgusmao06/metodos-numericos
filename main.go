@@ -1,10 +1,12 @@
 package main
 
-import "fmt"
-import "metodos-numericos/metodos_numericos"
-import "metodos-numericos/utils"
+import (
+	"fmt"
+	"metodos-numericos/metodos_numericos"
+)
 
 func main() {
+
 	m := [][]float64{
 		{3, 2, -5, 1, 8},
 		{1, 4, 1, 0, 2},
@@ -12,6 +14,13 @@ func main() {
 		{0, -1, 2, 4, 10},
 	}
 
-	fmt.Println(metodos_numericos.Gauss(m))
-	utils.ImprimeMatriz(m)
+	n := [][]float64{
+		{1, 4, -8, -1, 5},
+		{-2, 3, -4, -10, -3},
+		{-18, 3, 4, -5, 0},
+		{1, -6, 0, 3, 10},
+	}
+
+	fmt.Println(metodos_numericos.CriterioLinhas(n))
+	fmt.Println(metodos_numericos.CriterioLinhas(m))
 }
