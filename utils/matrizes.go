@@ -1,8 +1,9 @@
 package utils
 
-import "math"
-
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func ImprimeMatriz(matriz [][]float64) {
 	for i := range matriz {
@@ -46,4 +47,19 @@ func Escalonamento(matriz [][]float64) {
 		}
 		iteracao++
 	}
+}
+
+func EncontrarXJacobi(ind_linha int, mat [][]float64, vet_x []float64, vet_resp []float64) float64 {
+	resp := vet_resp[ind_linha]
+
+	for j := 0; j < len(mat); j++ {
+		if j == ind_linha {
+			continue
+		}
+		resp -= (mat[ind_linha][j] * vet_x[j])
+	}
+	resp /= mat[ind_linha][ind_linha]
+
+	return resp
+
 }
