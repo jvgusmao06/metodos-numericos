@@ -5,7 +5,7 @@ import (
 	"metodos-numericos/utils"
 )
 
-func jacobi(matAumentada [][]float64, chute []float64, maxinte int, desvio float64) []float64 {
+func metodo_jacobi(matAumentada [][]float64, chute []float64, maxinte int, desvio float64) []float64 {
 
 	chuteant := make([]float64, len(chute))
 	copy(chuteant, chute)
