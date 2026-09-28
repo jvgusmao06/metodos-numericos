@@ -48,3 +48,24 @@ func Escalonamento(matriz [][]float64) {
 		iteracao++
 	}
 }
+
+// SepararMatrizAumentada recebe uma matriz aumentada [A | b] de tamanho n x (n+1)
+// e retorna a matriz de coeficientes A (n x n) e o vetor de respostas B (n).
+func SepararMatrizAumentada(matAug [][]float64) ([][]float64, []float64) {
+	n := len(matAug)
+
+	A := make([][]float64, n)
+	B := make([]float64, n)
+
+	for i := 0; i < n; i++ {
+		A[i] = make([]float64, n)
+
+		for j := 0; j < n; j++ {
+			A[i][j] = matAug[i][j]
+		}
+
+		B[i] = matAug[i][n]
+	}
+
+	return A, B
+}
