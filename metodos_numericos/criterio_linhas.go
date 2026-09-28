@@ -34,7 +34,7 @@ func CriterioLinhas(mat [][]float64) bool {
 	}
 
 	for i := 0; i < len(mat)-1; i++ {
-		ind := EncontrarPivo(mat, i)
+		ind := encontrarPivo(mat, i)
 		if i != ind {
 			utils.TrocaLinha(mat, i, ind)
 		}
@@ -43,7 +43,7 @@ func CriterioLinhas(mat [][]float64) bool {
 	return ChecaLinhas(mat)
 }
 
-func EncontrarPivo(mat [][]float64, ind_linha int) int {
+func encontrarPivo(mat [][]float64, ind_linha int) int {
 	maior_ind := ind_linha
 	maior := math.Abs(mat[ind_linha][ind_linha])
 

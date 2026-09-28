@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"metodos-numericos/metodos_numericos"
 )
 
 func main() {
@@ -41,7 +42,7 @@ func main() {
 	maxIteracoes := 1000
 
 	// Executa o método de Jacobi
-	resultado := metodos.metodo_jacobi(matAumentada, chute, maxIteracoes, tolerancia)
+	resultado := metodos_numericos.GaussJacobi(matAumentada, chute, maxIteracoes, tolerancia)
 
 	// Imprime o resultado
 	fmt.Println("Vetor solução:")
